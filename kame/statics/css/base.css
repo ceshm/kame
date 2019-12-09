@@ -1,0 +1,36 @@
+@media (max-width: 978px) {
+    .content {
+        padding: 20px 10px;
+    }
+}
+
+@media (min-width: 978px) {
+    .content {
+        padding: 25px 50px;
+    }
+}
+
+pre {
+    padding: 5px;
+    margin: 5px;
+}
+
+.string {
+    color: green;
+}
+
+.number {
+    color: blue;
+}
+
+.boolean {
+    color: red;
+}
+
+.null {
+    color: gray;
+}
+
+.key {
+    color: #306733;
+}
