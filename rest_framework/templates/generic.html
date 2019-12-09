@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ request.url_for("home") }}">Home</a></li>
+            <li class="breadcrumb-item">{{ serializer.get_model_name() }}</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-header">
+            {{ serializer.get_model_name() }} List
+        </div>
+        <div class="card-body text-dark">
+            <pre id="json_code"></pre>
+        </div>
+    </div>
+
+    <div class="card p-3 mt-3">
+        Form goes here
+    </div>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script>
+        var data = {{ serializer.get_data()|safe}};
+        var str = JSON.stringify(data, undefined, 4);
+        document.getElementById("json_code").innerHTML = urlify(syntaxHighlight(str));
+    </script>
+{% endblock extra_js %}
