@@ -1,0 +1,2 @@
+tortoise-orm==0.14.2
+starlette==0.12.13
