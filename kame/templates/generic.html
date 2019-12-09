@@ -1,8 +1,4 @@
 {% extends "base.html" %}
-
-{% block extra_css %}
-{% endblock %}
-
 {% block content %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -10,7 +6,6 @@
             <li class="breadcrumb-item">{{ serializer.get_model_name() }}</li>
         </ol>
     </nav>
-
     <div class="card">
         <div class="card-header">
             {{ serializer.get_model_name() }} List
@@ -19,13 +14,10 @@
             <pre id="json_code"></pre>
         </div>
     </div>
-
     <div class="card p-3 mt-3">
         Form goes here
     </div>
-
 {% endblock content %}
-
 {% block extra_js %}
     <script>
         var data = {{ serializer.get_data()|safe}};
