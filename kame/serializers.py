@@ -15,7 +15,6 @@ class ModelSerializer:
                 except AttributeError:
                     pass
             data.append(obj_dict)
-
         return data
 
 
