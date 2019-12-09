@@ -50,7 +50,7 @@ class TourViewSet(viewsets.ModelViewSet):
 
 ```
 
-3. Register route
+3. Register a route
 ```python
 from kame import routers
 
