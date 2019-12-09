@@ -1,12 +1,14 @@
+import os
 from starlette.applications import Starlette
 from starlette.endpoints import HTTPEndpoint
 from starlette.responses import JSONResponse
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
+root_path = os.path.dirname(os.path.abspath(__file__))
 
 rest_api = Starlette(debug=True)
-templates = Jinja2Templates(directory='kame/templates')
+templates = Jinja2Templates(directory=root_path+'/templates')
 
 registered_paths = []
 
@@ -32,7 +34,7 @@ class DefaultRouter:
     def register_app(self, app):
         self.app = app
         app.mount("/api", rest_api)
-        app.mount('/api-static', StaticFiles(directory='kame/statics'), name='static')
+        app.mount('/api-static', StaticFiles(directory=root_path+'/statics'), name='static')
 
     def register(self, path, model_class, basename=""):
         print(path)

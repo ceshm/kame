@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="kame",
-    version="0.0.1",
+    version="0.0.3",
     author="ceshm",
     author_email="cesar.hernandez.mons@gmail.com",
     description="async REST framework",
@@ -14,6 +14,7 @@ setuptools.setup(
     url="https://github.com/ceshm/kame",
     packages=setuptools.find_packages(),
     license="MIT License",
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
