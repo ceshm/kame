@@ -1,6 +1,6 @@
 from starlette.endpoints import HTTPEndpoint
 
-from rest_framework.routers import templates
+from kame.routers import templates
 
 
 class GenericView(HTTPEndpoint):
