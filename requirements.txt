@@ -1,2 +1,2 @@
 tortoise-orm==0.15.23
-starlette==0.12.13
+starlette==0.25.0
